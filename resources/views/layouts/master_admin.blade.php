@@ -168,7 +168,7 @@
                                     </span>
                                 </a></li> 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                    href="/admin-officials-archive" aria-expanded="false">
+                                    href="/announcement" aria-expanded="false">
                                     <i class="mdi me-2 mdi-table"></i>
                                     <span class="hide-menu">Announcements
                                         <!-- {{ $archiveTotal > 0 ? $archiveTotal : '' }} -->
@@ -185,7 +185,7 @@
                                     </span>
                                 </a></li> 
                                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                    href="/admin-officials-archive" aria-expanded="false">
+                                    href="/lost-and-found" aria-expanded="false">
                                     <i class="mdi me-2 mdi-table"></i>
                                     <span class="hide-menu">Lost and found
                                         <!-- {{ $archiveTotal > 0 ? $archiveTotal : '' }} -->
@@ -202,7 +202,7 @@
                                     </span>
                                 </a></li> 
                                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                    href="/admin-officials-archive" aria-expanded="false">
+                                    href="/user" aria-expanded="false">
                                     <i class="mdi me-2 mdi-table"></i>
                                     <span class="hide-menu">User
                                         <!-- {{ $archiveTotal > 0 ? $archiveTotal : '' }} -->
@@ -219,7 +219,7 @@
                                     </span>
                                 </a></li> 
                                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                    href="/admin-officials-archive" aria-expanded="false">
+                                    href="/node" aria-expanded="false">
                                     <i class="mdi me-2 mdi-table"></i>
                                     <span class="hide-menu">Nodes
                                         <!-- {{ $archiveTotal > 0 ? $archiveTotal : '' }} -->

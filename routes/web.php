@@ -29,8 +29,8 @@ $var = Announcement::all();
 Auth::routes();
 
 Route::get('/admin', 'AdminController@index')->name('admin');
-Route::get('/announcement', 'AdminController@index')->name('admin');
-Route::get('/lost-and-found', 'AdminController@index')->name('admin');
+Route::get('/announcement', 'AdminController@announcement')->name('announcement');
+Route::get('/lost-and-found', 'AdminController@lost_and_found')->name('lost_and_found');
 Route::get('/user', 'AdminController@index')->name('admin');
 Route::get('/node', 'AdminController@index')->name('admin');
 

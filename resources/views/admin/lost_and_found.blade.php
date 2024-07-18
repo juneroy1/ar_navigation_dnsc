@@ -6,7 +6,7 @@
         <div class="row align-items-center">
             <div class="col-md-6 col-8 align-self-center">
                 <h3 class="page-title mb-0 p-0">
-                    {{ $update ? "Edit Announcement" : "Create Announcement" }}
+                    {{ $update ? "Edit Lost and found" : "Create Lost and found" }}
                 </h3>
                 <div class="d-flex align-items-center">
                     <nav aria-label="breadcrumb">
@@ -18,7 +18,7 @@
                                 class="breadcrumb-item active"
                                 aria-current="page"
                             >
-                                {{ $update ? "Edit Announcement" : "Create Announcement" }}
+                                {{ $update ? "Edit Lost and found" : "Create Lost and found" }}
                             </li>
                         </ol>
                     </nav>
@@ -136,7 +136,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">List of announcement</h4>
+                        <h4 class="card-title">List of Lost and found</h4>
                         <!-- <h6 class="card-subtitle">Add class <code>.table</code></h6> -->
                         <div class="table-responsive">
                             <form
