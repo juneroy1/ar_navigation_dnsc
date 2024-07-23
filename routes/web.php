@@ -28,6 +28,7 @@ use App\Deploy;
 $var = Announcement::all();
 Auth::routes();
 
+Route::get('/', 'AdminController@index')->name('admin');
 Route::get('/admin', 'AdminController@index')->name('admin');
 Route::get('/announcement', 'AdminController@announcement')->name('announcement');
 Route::get('/lost-and-found', 'AdminController@lost_and_found')->name('lost_and_found');
