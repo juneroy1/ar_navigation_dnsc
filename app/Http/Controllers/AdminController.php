@@ -157,7 +157,6 @@ class AdminController extends Controller
       
             return view('admin.announcement', [
                 'updates' => $updates,
-                'department' => $department,
                 'listRequests' => $listRequest,
                 'pageName' => 'Update',
                 'update'=> false,

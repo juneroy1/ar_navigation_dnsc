@@ -49,7 +49,7 @@
                     <li>{!! \Session::get('success') !!}</li>
                 </ul>
             </div>
-            @endif @if ($department != 'super_admin')
+            @endif 
             <form
                 method="POST"
                 action="{{ $edit ? '/admin-update/' . $update->id : '/admin' }}"
@@ -132,7 +132,8 @@
                     </div>
                 </div>
             </form>
-            @endif @if (!$edit)
+            
+            @if (!$edit)
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
