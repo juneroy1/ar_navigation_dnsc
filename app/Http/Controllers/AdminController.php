@@ -89,45 +89,13 @@ class AdminController extends Controller
     {
         $user = Auth::user();
         $id = Auth::id();
-        $department = $user->department_admin_model_id;
-        //
-        if ($department == 'super_admin') {
-            # code...
-            $updates = Update::query()
-            ->orderByRaw('ISNULL(priority), priority ASC')
-            ->get();
-            // $listRequest = Department::withCount('updates')->get();
-        } else {
-
-            $updates = Update::where('department_id', '=', $department)->withCount('department')->get();
-            // $listRequest = Department::where('department_id', '=', $department)->withCount('updates')->get();
-        }
-        $listRequest = Department::withCount('updates')->get();
-
+        
 
       
             return view('admin.lost_and_found', [
-                'updates' => $updates,
-                'department' => $department,
-                'listRequests' => $listRequest,
                 'pageName' => 'Update',
                 'update'=> false,
                 'edit' => false,
-                'updateTotal' => $this->updateTotalNotApprove($department),
-                'archiveTotal' => $this->archiveTotalNotApprove($department),
-                'announcementTotal' => $this->announcementTotalNotApprove($department),
-                'memberTotal' => $this->memberTotalNotApproved($department),
-                'personnelTotal' => $this->personnelTotalNotApproved($department),
-                'departmentFunctionalityTotal' => $this->departmentFunctionalityTotalNotApproved($department),
-                'landingImageTotal' => $this->landingImageTotalNotApproved($department),
-                'emergencyHotlineTotal' => $this->emergencyHotlineTotalNotApproved($department),
-                'archiveDepartmentTotal' => $this->archiveDepartmentTotalNotApproved($department),
-                'barangayOfficialModelTotal' => $this->barangayOfficialModelTotalNotApproved($department),
-                'barangayModelTotal' => $this->barangayModelTotalNotApproved($department),
-                'contactNumberOfficeTotal' => $this->contactNumberOfficeTotalNotApproved($department),
-                'organizationalChartTotal' => $this->organizationalChartTotalNotApproved($department),
-                'legislativeBranchCountSuperAdmin' => $this->legislativeBranchCountSuperAdmin(),
-                'executiveBranchCountSuperAdmin' => $this->executiveBranchCountSuperAdmin(),
                 // 'idPage' => $department,
             ]);
             
