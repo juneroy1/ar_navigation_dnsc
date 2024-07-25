@@ -3,25 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Update;
-use App\Department;
-use App\Announcement;
-use App\Member;
-use App\Archive;
-use App\Councilors;
-use App\DepartmentAdminModel;
-use App\OfficialsAdmin;
-use App\DepartmentFunctionality;
-use App\LandingImage;
-use App\EmergencyHotline;
-use App\ArchiveDepartment;
-use App\BarangayOfficialModel;
-use App\BarangayModel;
-use App\ContactNumberOffice;
-use App\OrganizationalChart;
 use Intervention\Image\ImageManagerStatic as Image;
-use App\AgendaModel;
-use App\Personnel;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
