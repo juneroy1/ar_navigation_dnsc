@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Announcement extends Model
 {
     //
-    protected $fillable = ['title', 'description', 'image', 'is_approved', 'user_id', 'department_id'];
+    protected $fillable = ['title', 'description', 'image',  'user_id'];
     protected $table = "announcements";
 
     public function department()
