@@ -22,9 +22,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-          $user = Auth::user();
+        $user = Auth::user();
         $id = Auth::id();
-      
             return view('admin.index', [
                  'pageName' => 'Update',
                 'update'=> false,
@@ -46,11 +45,13 @@ class AdminController extends Controller
         $create->image = "";
         $create->user_id = $id;
         $create->save();
-
+        $announcements = Announcement::getAllAnnouncement();
         return view('admin.announcement', [
             'pageName' => 'Update',
             'update'=> false,
             'edit' => false,
+
+            'announcements' => $announcements
         ]);
         
     }
@@ -77,11 +78,14 @@ class AdminController extends Controller
         $user = Auth::user();
         $id = Auth::id();
         
+        $announcements = Announcement::getAllAnnouncement();
       
             return view('admin.announcement', [
                 'pageName' => 'Update',
                 'update'=> false,
                 'edit' => false,
+
+                'announcements' => $announcements
             ]);
             
         

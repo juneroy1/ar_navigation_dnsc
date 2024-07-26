@@ -155,9 +155,27 @@
                                             <th class="border-top-0">
                                                 Description
                                             </th>
+                                            <th class="border-top-0">
+                                                Action
+                                            </th>
                                            
                                         </tr>
                                     </thead>
+                                    <tbody>
+                                        @foreach ($announcements as $announcement )
+                                        <tr>
+                                        <td>{{$announcement->id}}</td>
+                                            <td>{{$announcement->image}}</td>
+                                            <td>{{$announcement->title}}</td>
+                                            <td>{{$announcement->description}}</td>
+                                            <td>
+                                                <button>delete</button>
+                                                <button>edit</button>
+                                            </td>
+                                        </tr>
+                                            
+                                        @endforeach
+                                    </tbody>
                                     
                                 </table>
                             </form>

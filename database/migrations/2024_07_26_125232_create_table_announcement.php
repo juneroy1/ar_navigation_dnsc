@@ -13,7 +13,7 @@ class CreateTableAnnouncement extends Migration
      */
     public function up()
     {
-        Schema::create('announcement', function (Blueprint $table) {
+        Schema::create('announcements', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id');
             $table->string('image');
@@ -30,6 +30,6 @@ class CreateTableAnnouncement extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('announcement');
+        Schema::dropIfExists('announcements');
     }
 }

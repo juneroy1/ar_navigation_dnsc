@@ -10,5 +10,9 @@ class Announcement extends Model
     protected $fillable = ['title', 'description', 'image',  'user_id'];
     protected $table = "announcements";
 
+
+    public static function getAllAnnouncement(){
+        return self::all();
+    }
    
 }
