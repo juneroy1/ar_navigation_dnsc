@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Announcement;
+
 
 class AdminController extends Controller
 {
@@ -30,6 +32,26 @@ class AdminController extends Controller
                 // 'idPage' => $department,
             ]);
             
+        
+    }
+
+    public function createAnnouncement(Request $request)
+    {
+        $user = Auth::user();
+        $id = Auth::id();
+
+        $create = new Announcement;
+        $create->title = $request->title;
+        $create->description = $request->description;
+        $create->image = "";
+        $create->user_id = $id;
+        $create->save();
+
+        return view('admin.announcement', [
+            'pageName' => 'Update',
+            'update'=> false,
+            'edit' => false,
+        ]);
         
     }
 

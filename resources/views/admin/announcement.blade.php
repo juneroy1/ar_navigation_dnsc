@@ -52,7 +52,7 @@
             @endif 
             <form
                 method="POST"
-                action="{{ $edit ? '/admin-update/' . $update->id : '/admin' }}"
+                action="announcement"
                 enctype="multipart/form-data"
                 class="row"
             >
