@@ -46,13 +46,15 @@ class AdminController extends Controller
         $create->user_id = $id;
         $create->save();
         $announcements = Announcement::all();
-        return view('admin.announcement', [
-            'pageName' => 'Update',
-            'update'=> false,
-            'edit' => false,
+        // return view('admin.announcement', [
+        //     'pageName' => 'Update',
+        //     'update'=> false,
+        //     'edit' => false,
 
-            'announcements' => $announcements
-        ]);
+        //     'announcements' => $announcements
+        // ]);
+        return redirect()->back()->with('success', 'Successfully created new announcement');   
+
         
     }
 
