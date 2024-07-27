@@ -156,7 +156,25 @@
                                            
                                         </tr>
                                     </thead>
-                                    
+                                    <tbody>
+                                        @foreach ($lost_and_found_list as $lost_and_found )
+                                        <tr>
+                                        <td>{{$lost_and_found->id}}</td>
+                                            <td>{{$lost_and_found->image}}</td>
+                                            <td>{{$lost_and_found->title}}</td>
+                                            <td>{{$lost_and_found->description}}</td>
+                                            <td>
+                                                <!-- <form id="myForm">
+                                                    @csrf -->
+                                                    <button class="btn btn-danger text-white" type="button" onclick="deleteAnnouncement({{$lost_and_found->id}})">delete</button>
+                                                    <button class="btn btn-primary" type="button" onclick="editAnnouncement({{$lost_and_found->id}})">edit</button>
+                                                <!-- </form> -->
+                                                
+                                            </td>
+                                        </tr>
+                                            
+                                        @endforeach
+                                    </tbody>
                                 </table>
                             </form>
                         </div>
