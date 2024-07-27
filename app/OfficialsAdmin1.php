@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class OfficialsAdmin extends Model
+class OfficialsAdmin1 extends Model
 {
     //
     // protected $fillable = ['image', 'first_name', 'last_name','position',"is_approved","department", "user_id"];
