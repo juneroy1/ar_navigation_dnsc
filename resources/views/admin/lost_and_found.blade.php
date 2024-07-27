@@ -216,8 +216,8 @@
             window.location.href = "/deleteLostAndFound/"+id
         }
     }
-    function editAnnouncement(id) {
-        window.location.href = "/editAnnouncement/"+id
+    function editLostAndFound(id) {
+        window.location.href = "/editLostAndFound/"+id
         
     }
     function disapprove(id, idpage) {
