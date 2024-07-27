@@ -45,7 +45,7 @@ class AdminController extends Controller
         $create->image = "";
         $create->user_id = $id;
         $create->save();
-        $announcements = Announcement::getAllAnnouncement();
+        $announcements = Announcement::all();
         return view('admin.announcement', [
             'pageName' => 'Update',
             'update'=> false,
@@ -78,7 +78,7 @@ class AdminController extends Controller
         $user = Auth::user();
         $id = Auth::id();
         
-        $announcements = Announcement::getAllAnnouncement();
+        $announcements = Announcement::all();
       
             return view('admin.announcement', [
                 'pageName' => 'Update',
