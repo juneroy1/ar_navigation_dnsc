@@ -12,6 +12,16 @@ use App\LostAndFound;
 class LostAndFoundController extends Controller
 {
     //
+    public function editLostAndFound($id){
+        $edit = LostAndFound::find($id);
+       
+        return view('admin.editLostAndFound', [
+            'pageName' => 'Update',
+            'update'=> false,
+            'edit' => false,
+            'lost_and_found' => $edit
+        ]);
+    }
     function deleteLostAndFound($id) {
         $delete = LostAndFound::find($id);
         if ($delete) {
