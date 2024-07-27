@@ -12,6 +12,16 @@ use App\LostAndFound;
 class LostAndFoundController extends Controller
 {
     //
+    function updateLostAndFound(Request $request, $id) {
+        $edit = LostAndFound::find($id);
+        if ($edit) {
+            $edit->title = $request->title;
+            $edit->description = $request->description;
+            $edit->save();
+            return redirect('/lost-and-found')->with('success', 'Lost and Found update successfully'); ;
+
+        }
+    }
     public function editLostAndFound($id){
         $edit = LostAndFound::find($id);
        
