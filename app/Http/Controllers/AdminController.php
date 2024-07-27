@@ -7,7 +7,7 @@ use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Announcement;
-
+use App\LostAndFound;
 
 class AdminController extends Controller
 {
@@ -90,11 +90,13 @@ class AdminController extends Controller
         $id = Auth::id();
         
 
-      
+        $lost_and_found_list = LostAndFound::all();
+        
             return view('admin.lost_and_found', [
                 'pageName' => 'Update',
                 'update'=> false,
                 'edit' => false,
+                'lost_and_found_list' => $lost_and_found_list
                 // 'idPage' => $department,
             ]);
             
