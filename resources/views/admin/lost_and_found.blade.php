@@ -52,7 +52,7 @@
             @endif
             <form
                 method="POST"
-                action="{{ $edit ? '/admin-update/' . $update->id : '/admin' }}"
+                action="lost_and_found"
                 enctype="multipart/form-data"
                 class="row"
             >
@@ -62,7 +62,6 @@
                     <div class="card">
                         <div class="card-body profile-card">
                             <center class="mt-4">
-                                {{-- class="rounded-circle" --}}
                                 <img
                                     src="{{ $update ? '/updates/' . $update->image : '/foradmin/assets/images/users/5.jpg' }}"
                                     width="150"
