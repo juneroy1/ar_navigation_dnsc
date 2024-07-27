@@ -171,10 +171,10 @@
                                             <td>
                                                 <!-- <form id="myForm">
                                                     @csrf -->
-                                                    <button type="button" onclick="deleteAnnouncement({{$announcement->id}})">delete</button>
+                                                    <button class="btn btn-danger text-white" type="button" onclick="deleteAnnouncement({{$announcement->id}})">delete</button>
+                                                    <button class="btn btn-primary" type="button" onclick="editAnnouncement({{$announcement->id}})">edit</button>
                                                 <!-- </form> -->
                                                 
-                                                <button>edit</button>
                                             </td>
                                         </tr>
                                             
@@ -222,6 +222,10 @@
         if (confirm_modal) {
             window.location.href = "/deleteAnnouncement/"+id
         }
+    }
+    function editAnnouncement(id) {
+        window.location.href = "/editAnnouncement/"+id
+        
     }
     function disapprove(id, idpage) {
         let confirm_Final = confirm("Do you really want to DISAPPROVE?");
