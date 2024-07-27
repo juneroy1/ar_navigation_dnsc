@@ -38,6 +38,7 @@ Route::post('/updateAnnouncement/{id}', 'AdminController@updateAnnouncement')->n
 
 Route::get('/lost-and-found', 'AdminController@lost_and_found')->name('lost_and_found');
 Route::post('/lost_and_found', 'LostAndFoundController@createLostAndFound')->name('createLostAndFound');
+Route::get('/deleteLostAndFound/{id}', 'LostAndFoundController@deleteLostAndFound')->name('deleteLostAndFound');
 
 
 Route::get('/user', 'AdminController@index')->name('user');
