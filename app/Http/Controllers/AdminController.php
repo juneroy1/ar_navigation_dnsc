@@ -33,6 +33,16 @@ class AdminController extends Controller
             
         
     }
+    public function editAnnouncement($id){
+        $edit = Announcement::find($id);
+       
+        return view('admin.editAnnouncement', [
+            'pageName' => 'Update',
+            'update'=> false,
+            'edit' => false,
+            'announcement' => $edit
+        ]);
+    }
     public function deleteAnnouncement($id){
         $delete = Announcement::find($id);
         if ($delete) {
