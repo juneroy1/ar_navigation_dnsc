@@ -166,8 +166,8 @@
                                             <td>
                                                 <!-- <form id="myForm">
                                                     @csrf -->
-                                                    <button class="btn btn-danger text-white" type="button" onclick="deleteAnnouncement({{$lost_and_found->id}})">delete</button>
-                                                    <button class="btn btn-primary" type="button" onclick="editAnnouncement({{$lost_and_found->id}})">edit</button>
+                                                    <button class="btn btn-danger text-white" type="button" onclick="deleteLostAndFound({{$lost_and_found->id}})">delete</button>
+                                                    <button class="btn btn-primary" type="button" onclick="editLostAndFound({{$lost_and_found->id}})">edit</button>
                                                 <!-- </form> -->
                                                 
                                             </td>
@@ -210,6 +210,16 @@
 </div>
 
 <script>
+    function deleteLostAndFound(id) {
+        const confirm_modal = confirm("Delete lost and found?")
+        if (confirm_modal) {
+            window.location.href = "/deleteLostAndFound/"+id
+        }
+    }
+    function editAnnouncement(id) {
+        window.location.href = "/editAnnouncement/"+id
+        
+    }
     function disapprove(id, idpage) {
         let confirm_Final = confirm("Do you really want to DISAPPROVE?");
         if (confirm_Final) {
