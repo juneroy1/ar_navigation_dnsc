@@ -12,6 +12,13 @@ use App\LostAndFound;
 class LostAndFoundController extends Controller
 {
     //
+    function deleteLostAndFound($id) {
+        $delete = LostAndFound::find($id);
+        if ($delete) {
+            $delete->delete();
+        }
+        return redirect()->back()->with('success', 'Lost and Found deleted successfully'); 
+    }
     public function createLostAndFound(Request $request)
     {
         $user = Auth::user();
