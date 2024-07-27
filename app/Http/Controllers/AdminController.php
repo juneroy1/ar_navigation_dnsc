@@ -33,7 +33,13 @@ class AdminController extends Controller
             
         
     }
-
+    public function deleteAnnouncement($id){
+        $delete = Announcement::find($id);
+        if ($delete) {
+            $delete->delete();
+        }
+        return redirect()->back()->with('success', 'Announcement deleted successfully'); 
+    }
     public function createAnnouncement(Request $request)
     {
         $user = Auth::user();
