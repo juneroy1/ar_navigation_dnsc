@@ -169,7 +169,11 @@
                                             <td>{{$announcement->title}}</td>
                                             <td>{{$announcement->description}}</td>
                                             <td>
-                                                <button>delete</button>
+                                                <!-- <form id="myForm">
+                                                    @csrf -->
+                                                    <button type="button" onclick="deleteAnnouncement({{$announcement->id}})">delete</button>
+                                                <!-- </form> -->
+                                                
                                                 <button>edit</button>
                                             </td>
                                         </tr>
@@ -211,7 +215,14 @@
     <!-- ============================================================== -->
 </div>
 
+
 <script>
+    function deleteAnnouncement(id) {
+        const confirm_modal = confirm("Delete announcement?")
+        if (confirm_modal) {
+            window.location.href = "/deleteAnnouncement/"+id
+        }
+    }
     function disapprove(id, idpage) {
         let confirm_Final = confirm("Do you really want to DISAPPROVE?");
         if (confirm_Final) {
