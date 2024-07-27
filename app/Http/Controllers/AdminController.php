@@ -33,6 +33,16 @@ class AdminController extends Controller
             
         
     }
+    function updateAnnouncement(Request $request, $id) {
+        $edit = Announcement::find($id);
+        if ($edit) {
+            $edit->title = $request->title;
+            $edit->description = $request->description;
+            $edit->save();
+            return redirect('/announcement')->with('success', 'Announcement update successfully'); ;
+
+        }
+    }
     public function editAnnouncement($id){
         $edit = Announcement::find($id);
        
