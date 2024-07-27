@@ -40,6 +40,7 @@ Route::get('/lost-and-found', 'AdminController@lost_and_found')->name('lost_and_
 Route::post('/lost_and_found', 'LostAndFoundController@createLostAndFound')->name('createLostAndFound');
 Route::get('/deleteLostAndFound/{id}', 'LostAndFoundController@deleteLostAndFound')->name('deleteLostAndFound');
 Route::get('/editLostAndFound/{id}', 'LostAndFoundController@editLostAndFound')->name('editLostAndFound');
+Route::post('/updateLostAndFound/{id}', 'LostAndFoundController@updateLostAndFound')->name('updateLostAndFound');
 
 
 Route::get('/user', 'AdminController@index')->name('user');
