@@ -13,7 +13,7 @@ class AdminController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
     /**
      * Display a listing of the resource.
@@ -119,6 +119,23 @@ class AdminController extends Controller
             ]);
             
         
+    }
+
+    public function getData()
+    {
+        // Simulate data fetching, you would normally fetch this from a database or another source
+        $data = [
+            'id' => 1,
+            'name' => 'John Doe',
+            'email' => 'john.doe@example.com'
+        ];
+
+        // Return JSON response
+        return response()->json([
+            'success' => true,
+            'data' => $data,
+            'message' => 'Data fetched successfully'
+        ], 200);
     }
 
 }
