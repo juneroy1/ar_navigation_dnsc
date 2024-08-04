@@ -121,7 +121,20 @@ class AdminController extends Controller
         
     }
 
-    public function getData()
+    public function announcements()
+    {
+        // Simulate data fetching, you would normally fetch this from a database or another source
+        $announcements = Announcement::all();
+
+        // Return JSON response
+        return response()->json([
+            'success' => true,
+            'data' => $announcements,
+            'message' => 'Data fetched successfully'
+        ], 200);
+    }
+
+     public function getData()
     {
         // Simulate data fetching, you would normally fetch this from a database or another source
         $data = [
