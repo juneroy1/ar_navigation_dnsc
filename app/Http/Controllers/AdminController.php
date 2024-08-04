@@ -134,6 +134,21 @@ class AdminController extends Controller
         ], 200);
     }
 
+     public function lost_and_found_list()
+    {
+        // Simulate data fetching, you would normally fetch this from a database or another source
+        $lostAndFound = LostAndFound::all();
+
+        // Return JSON response
+        return response()->json([
+            'success' => true,
+            'data' => $lostAndFound,
+            'message' => 'Data fetched successfully'
+        ], 200);
+    }
+
+    
+
      public function getData()
     {
         // Simulate data fetching, you would normally fetch this from a database or another source

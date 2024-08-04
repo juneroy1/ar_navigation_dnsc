@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::get('/get_data', 'AdminController@getData')->name('getData');
 Route::get('/announcements', 'AdminController@announcements')->name('announcements');
+Route::get('/lost_and_found_list', 'AdminController@lost_and_found_list')->name('lost_and_found_list');
