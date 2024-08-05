@@ -125,7 +125,7 @@ class AdminController extends Controller
     public function announcements()
     {
         // Simulate data fetching, you would normally fetch this from a database or another source
-        $announcements = Announcement::all();
+        $announcements = Announcement::orderBy('created_at', 'DESC')->get();
 
         // Return JSON response
         return response()->json([
@@ -177,7 +177,24 @@ class AdminController extends Controller
             $filename = time() . '_' . $file->getClientOriginalName();
             $path = $file->storeAs('images', $filename, 'public');
 
-            return response()->json(['url' => Storage::url($path), 'description'=> $description, 'name' =>  $name, 'avatar' => $avatar], 200);
+            // create new announcement
+
+            $announcement = new Announcement;
+            $announcement->title = $description;
+            $announcement->description = $description;
+            $announcement->name = $name;
+            $announcement->avatar = $avatar;
+            $announcement->image = Storage::url($path);
+            
+
+            if ($announcement->save()) {
+                return response()->json(['url' => Storage::url($path), 'description'=> $description, 'name' =>  $name, 'avatar' => $avatar], 200);
+            }
+
+            return response()->json(['url' => Storage::url($path), 'description'=> $description, 'name' =>  $name, 'avatar' => $avatar], 500);
+
+
+            
         }
 
         return response()->json(['error' => 'No file uploaded'], 400);
