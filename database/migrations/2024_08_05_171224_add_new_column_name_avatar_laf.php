@@ -15,6 +15,8 @@ class AddNewColumnNameAvatarLaf extends Migration
     {
         Schema::table('lost_and_found', function (Blueprint $table) {
             //
+            $table->string('name')->nullable();
+            $table->string('avatar')->nullable();
         });
     }
 
