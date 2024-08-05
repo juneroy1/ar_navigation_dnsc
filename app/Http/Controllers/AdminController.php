@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Announcement;
 use App\LostAndFound;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
@@ -164,6 +165,22 @@ class AdminController extends Controller
             'data' => $data,
             'message' => 'Data fetched successfully'
         ], 200);
+    }
+
+   public function upload_announcement(Request $request)
+    {
+         $description = $request->input('description');
+         $name = $request->input('name');
+         $avatar = $request->input('avatar');
+        if($request->hasFile('file')) {
+            $file = $request->file('file');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $path = $file->storeAs('images', $filename, 'public');
+
+            return response()->json(['url' => Storage::url($path), 'description'=> $description, 'name' =>  $name, 'avatar' => $avatar], 200);
+        }
+
+        return response()->json(['error' => 'No file uploaded'], 400);
     }
 
 }
