@@ -138,7 +138,7 @@ class AdminController extends Controller
      public function lost_and_found_list()
     {
         // Simulate data fetching, you would normally fetch this from a database or another source
-        $lostAndFound = LostAndFound::all();
+        $lostAndFound = LostAndFound::orderBy('created_at', 'DESC')->get();
 
         // Return JSON response
         return response()->json([
