@@ -17,6 +17,7 @@ class CreateNewTableDestinations extends Migration
             $table->bigIncrements('id');
             $table->string('place_id_from');
             $table->string('place_id_to');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }
