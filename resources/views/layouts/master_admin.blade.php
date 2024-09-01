@@ -193,6 +193,13 @@
                                     </span>
                                    
                                 </a></li> 
+                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                    href="/destinations" aria-expanded="false">
+                                    <i class="mdi me-2 mdi-table"></i>
+                                    <span class="hide-menu">Destinations
+                                    </span>
+                                   
+                                </a></li>
                     </ul>
 
                 </nav>
