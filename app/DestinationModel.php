@@ -8,4 +8,5 @@ class DestinationModel extends Model
 {
     //
     protected $fillable = ['name'];
+    protected $table = "destinations";
 }
