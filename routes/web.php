@@ -30,6 +30,10 @@ Auth::routes();
 
 Route::get('/', 'AdminController@index')->name('admin');
 Route::get('/admin', 'AdminController@index')->name('admin');
+
+// destination
+Route::post('/destinations', 'DestinationController@index')->name('destinations');
+
 Route::post('/announcement', 'AdminController@createAnnouncement')->name('createAnnouncement');
 Route::get('/announcement', 'AdminController@announcement')->name('announcement');
 Route::get('/deleteAnnouncement/{id}', 'AdminController@deleteAnnouncement')->name('deleteAnnouncement');
