@@ -55,12 +55,10 @@ class AnnouncementController extends Controller
         $id = Auth::id();
         $department = $user->department_admin_model_id;
         //
-        if ($department =='super_admin') {
+        
             # code...
             $anns = Announcement::all();
-        }else{
-            $anns = Announcement::where('department_id', '=', $department)->get();
-        }
+       
         $listRequest = Department::withCount('announcement')->get();
 
         $update = Announcement::find($idPost);
