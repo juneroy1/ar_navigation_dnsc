@@ -65,7 +65,7 @@ class AnnouncementController extends Controller
 
         $update = Announcement::find($idPost);
         // dd($listRequest);
-        if ($department =='super_admin') {
+        // if ($department =='super_admin') {
             return view('admin.before.index', [
                 'updates'=> $anns, 
                 'department' => $department,
@@ -90,31 +90,7 @@ class AnnouncementController extends Controller
                 'update'=> false,
                 'edit' => false,
             ]);
-        }else{
-            return view('admin.announcement', [
-                'anns'=> $anns, 
-                'department' => $department,
-                'listRequests' => $listRequest,
-                'pageName' => 'Announcement',
-                'edit' => $idPost? true: false,
-                'update' => $idPost?$update: false,
-                'updateTotal' => $this->updateTotalNotApprove($department),
-                'archiveTotal' => $this->archiveTotalNotApprove($department),
-                'announcementTotal' => $this->announcementTotalNotApprove($department),
-                'memberTotal' => $this->memberTotalNotApproved($department),
-                'personnelTotal' => $this->personnelTotalNotApproved($department),
-                'departmentFunctionalityTotal' => $this->departmentFunctionalityTotalNotApproved($department),
-                'landingImageTotal' => $this->landingImageTotalNotApproved($department),
-                'emergencyHotlineTotal' => $this->emergencyHotlineTotalNotApproved($department),
-                'archiveDepartmentTotal' => $this->archiveDepartmentTotalNotApproved($department),
-                'barangayOfficialModelTotal' => $this->barangayOfficialModelTotalNotApproved($department),
-                'barangayModelTotal' => $this->barangayModelTotalNotApproved($department),
-                'contactNumberOfficeTotal' => $this->contactNumberOfficeTotalNotApproved($department),
-                'organizationalChartTotal' => $this->organizationalChartTotalNotApproved($department),
-                'legislativeBranchCountSuperAdmin' => $this->legislativeBranchCountSuperAdmin(),
-                'executiveBranchCountSuperAdmin' => $this->executiveBranchCountSuperAdmin(),
-            ]);
-        }
+        
         
         // return view('admin.announcement', ['anns'=> $anns,'department' => $department]);
     }
