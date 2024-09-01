@@ -15,6 +15,7 @@ class CreateNewTablePlaces extends Migration
     {
         Schema::create('places', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name')->nullable();
             $table->timestamps();
         });
     }
