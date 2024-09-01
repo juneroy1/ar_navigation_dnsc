@@ -18,6 +18,7 @@ class CreateNewTableDestinations extends Migration
             $table->string('place_id_from');
             $table->string('place_id_to');
             $table->integer('user_id');
+            $table->string('name')->nullable();
             $table->timestamps();
         });
     }
