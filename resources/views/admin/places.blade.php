@@ -106,20 +106,7 @@
                                         />
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="col-md-12 mb-0"
-                                        >Description</label
-                                    >
-                                    <div class="col-md-12">
-                                        <textarea
-                                            name="description"
-                                            rows="5"
-                                            class="form-control ps-0 form-control-line"
-                                        >
- {{ $update ? $update->description : '' }}</textarea
-                                        >
-                                    </div>
-                                </div>
+                                
 
                                 <div class="form-group">
                                     <div class="col-sm-12 d-flex">
