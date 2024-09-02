@@ -31,10 +31,13 @@ Auth::routes();
 Route::get('/', 'AdminController@index')->name('admin');
 Route::get('/admin', 'AdminController@index')->name('admin');
 
-// destination
+// place
 Route::get('/places', 'PlaceController@index')->name('get_places');
 Route::post('/place', 'PlaceController@store')->name('store_place');
 Route::get('/deletePlace/{id}', 'PlaceController@destroy')->name('delete_place');
+
+// destination
+Route::get('/destinations', 'DestinationController@index')->name('get_destinations');
 
 Route::post('/announcement', 'AdminController@createAnnouncement')->name('createAnnouncement');
 Route::get('/announcement', 'AdminController@announcement')->name('announcement');
