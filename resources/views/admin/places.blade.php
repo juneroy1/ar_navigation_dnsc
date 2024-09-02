@@ -74,7 +74,7 @@
                                     <label class="col-md-12 mb-0">Name</label>
                                     <div class="col-md-12">
                                         <input
-                                            name="title"
+                                            name="name"
                                             type="text"
                                             value="{{ $update ? $update->title : '' }}"
                                             placeholder="Name of the place"
