@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\DestinationModel;
+use Illuminate\Support\Facades\Auth;
 
 class DestinationController extends Controller
 {
@@ -14,6 +16,18 @@ class DestinationController extends Controller
     public function index()
     {
         //
+        $user = Auth::user();
+        $id = Auth::id();
+        
+        $destinations = DestinationModel::all();
+      
+        return view('admin.destinations', [
+            'pageName' => 'places',
+            'update'=> false,
+            'edit' => false,
+
+            'destinations' => $destinations
+        ]);
     }
 
     /**
