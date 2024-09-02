@@ -162,18 +162,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($announcements as $announcement )
+                                        @foreach ($places as $place )
                                         <tr>
-                                        <td>{{$announcement->id}}</td>
-                                            <td>{{$announcement->image}}</td>
-                                            <td>{{$announcement->title}}</td>
-                                            <td>{{$announcement->description}}</td>
+                                        <td>{{$place->id}}</td>
+                                            <td>{{$place->name}}</td>
                                             <td>
-                                                <!-- <form id="myForm">
-                                                    @csrf -->
-                                                    <button class="btn btn-danger text-white" type="button" onclick="deleteAnnouncement({{$announcement->id}})">delete</button>
-                                                    <button class="btn btn-primary" type="button" onclick="editAnnouncement({{$announcement->id}})">edit</button>
-                                                <!-- </form> -->
+                                                    <button class="btn btn-danger text-white" type="button" onclick="deleteAnnouncement({{$place->id}})">delete</button>
+                                                    <button class="btn btn-primary" type="button" onclick="editAnnouncement({{$place->id}})">edit</button>
+                                      
                                                 
                                             </td>
                                         </tr>
