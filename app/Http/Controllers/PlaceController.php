@@ -104,5 +104,10 @@ class PlaceController extends Controller
     public function destroy($id)
     {
         //
+         $delete = PlaceModel::find($id);
+        if ($delete) {
+            $delete->delete();
+        }
+        return redirect()->back()->with('success', 'Place deleted successfully'); 
     }
 }
