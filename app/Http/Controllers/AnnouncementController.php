@@ -58,12 +58,10 @@ class AnnouncementController extends Controller
         
             # code...
             $anns = Announcement::all();
-       
+       dd('test');
         $listRequest = Department::withCount('announcement')->get();
 
         $update = Announcement::find($idPost);
-        // dd($listRequest);
-        // if ($department =='super_admin') {
             return view('admin.before.index', [
                 'updates'=> $anns, 
                 'department' => $department,
@@ -71,20 +69,7 @@ class AnnouncementController extends Controller
                 'pageName' => 'Announcement',
                 'pagePrefix' => 'admin-announcement',
                 'updateTotal' => $this->updateTotal(),
-                'archiveTotal' => $this->archiveTotal(),
-                'announcementTotal' => $this->announcementTotal(),
-                'memberTotal' => $this->memberTotal(),
-                'personnelTotal' => $this->personnelTotal(),
-                'departmentFunctionalityTotal' => $this->departmentFunctionalityTotal(),
-                'landingImageTotal' => $this->landingImageTotal(),
-                'emergencyHotlineTotal' => $this->emergencyHotlineTotal(),
-                'archiveDepartmentTotal' => $this->archiveDepartmentTotal(),
-                'barangayOfficialModelTotal' => $this->barangayOfficialModelTotal(),
-                'barangayModelTotal' => $this->barangayModelTotal(),
-                'contactNumberOfficeTotal' => $this->contactNumberOfficeTotal(),
-                'organizationalChartTotal' => $this->organizationalChartTotal(),
-                'legislativeBranchCountSuperAdmin' => $this->legislativeBranchCountSuperAdmin(),
-                'executiveBranchCountSuperAdmin' => $this->executiveBranchCountSuperAdmin(),
+                
                 'update'=> false,
                 'edit' => false,
             ]);
