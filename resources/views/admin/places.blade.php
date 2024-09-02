@@ -6,7 +6,7 @@
         <div class="row align-items-center">
             <div class="col-md-6 col-8 align-self-center">
                 <h3 class="page-title mb-0 p-0">
-                    {{ $update ? "Edit Announcement" : "Create Announcement" }}
+                    {{ $update ? "Edit Place" : "Create Place" }}
                 </h3>
                 <div class="d-flex align-items-center">
                     <nav aria-label="breadcrumb">
@@ -20,8 +20,8 @@
                             >
                                 {{
                                     $update
-                                        ? "Edit Announcement"
-                                        : "Create Announcement"
+                                        ? "Edit Place"
+                                        : "Create Place"
                                 }}
                             </li>
                         </ol>
@@ -104,7 +104,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">List of announcement</h4>
+                        <h4 class="card-title">List of Place</h4>
                         <!-- <h6 class="card-subtitle">Add class <code>.table</code></h6> -->
                         <div class="table-responsive">
                             <form
@@ -181,7 +181,7 @@
 
 <script>
     function deletePlace(id) {
-        const confirm_modal = confirm("Delete announcement?");
+        const confirm_modal = confirm("Delete Place?");
         if (confirm_modal) {
             window.location.href = "/deletePlace/" + id;
         }
