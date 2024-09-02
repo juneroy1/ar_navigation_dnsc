@@ -18,7 +18,11 @@
                                 class="breadcrumb-item active"
                                 aria-current="page"
                             >
-                                {{ $update ? "Edit Announcement" : "Create Announcement" }}
+                                {{
+                                    $update
+                                        ? "Edit Announcement"
+                                        : "Create Announcement"
+                                }}
                             </li>
                         </ol>
                     </nav>
@@ -49,7 +53,7 @@
                     <li>{!! \Session::get('success') !!}</li>
                 </ul>
             </div>
-            @endif 
+            @endif
             <form
                 method="POST"
                 action="announcement"
@@ -116,7 +120,7 @@
                                         >
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <div class="col-sm-12 d-flex">
                                         <button
@@ -132,7 +136,7 @@
                     </div>
                 </div>
             </form>
-            
+
             @if (!$edit)
             <div class="col-sm-12">
                 <div class="card">
@@ -149,34 +153,35 @@
                                 <table class="table user-table">
                                     <thead>
                                         <tr>
-                                            <th class="border-top-0">#</th>
-                                            <th class="border-top-0">Image</th>
-                                            <th class="border-top-0">Title</th>
-                                            <th class="border-top-0">
-                                                Description
-                                            </th>
-                                            <th class="border-top-0">
-                                                Action
-                                            </th>
-                                           
+                                            <th class="border-top-0">Name</th>
+
+                                            <th class="border-top-0">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($places as $place )
                                         <tr>
-                                        <td>{{$place->id}}</td>
                                             <td>{{$place->name}}</td>
                                             <td>
-                                                    <button class="btn btn-danger text-white" type="button" onclick="deleteAnnouncement({{$place->id}})">delete</button>
-                                                    <button class="btn btn-primary" type="button" onclick="editAnnouncement({{$place->id}})">edit</button>
-                                      
-                                                
+                                                <button
+                                                    class="btn btn-danger text-white"
+                                                    type="button"
+                                                    onclick="deleteAnnouncement({{$place->id}})"
+                                                >
+                                                    delete
+                                                </button>
+                                                <button
+                                                    class="btn btn-primary"
+                                                    type="button"
+                                                    onclick="editAnnouncement({{$place->id}})"
+                                                >
+                                                    edit
+                                                </button>
                                             </td>
                                         </tr>
-                                            
+
                                         @endforeach
                                     </tbody>
-                                    
                                 </table>
                             </form>
                         </div>
@@ -211,17 +216,15 @@
     <!-- ============================================================== -->
 </div>
 
-
 <script>
     function deleteAnnouncement(id) {
-        const confirm_modal = confirm("Delete announcement?")
+        const confirm_modal = confirm("Delete announcement?");
         if (confirm_modal) {
-            window.location.href = "/deleteAnnouncement/"+id
+            window.location.href = "/deleteAnnouncement/" + id;
         }
     }
     function editAnnouncement(id) {
-        window.location.href = "/editAnnouncement/"+id
-        
+        window.location.href = "/editAnnouncement/" + id;
     }
     function disapprove(id, idpage) {
         let confirm_Final = confirm("Do you really want to DISAPPROVE?");
