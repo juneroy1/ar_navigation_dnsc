@@ -33,6 +33,7 @@ Route::get('/admin', 'AdminController@index')->name('admin');
 
 // destination
 Route::get('/places', 'PlaceController@index')->name('places');
+Route::post('/place', 'PlaceController@place')->name('place');
 
 Route::post('/announcement', 'AdminController@createAnnouncement')->name('createAnnouncement');
 Route::get('/announcement', 'AdminController@announcement')->name('announcement');
