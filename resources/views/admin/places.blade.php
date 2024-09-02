@@ -62,31 +62,7 @@
             >
                 @csrf
                 <!-- Column -->
-                <div class="col-lg-4 col-xlg-3 col-md-5">
-                    <div class="card">
-                        <div class="card-body profile-card">
-                            <center class="mt-4">
-                                {{-- class="rounded-circle" --}}
-                                <img
-                                    src="{{ $update ? '/updates/' . $update->image : '/foradmin/assets/images/users/5.jpg' }}"
-                                    width="150"
-                                />
-                                <h4 class="card-title mt-2">
-                                    {{
-                                        $edit
-                                            ? "Update an Image"
-                                            : "Upload an Image"
-                                    }}
-                                </h4>
-                                <input
-                                    type="file"
-                                    name="image"
-                                    class="form-control"
-                                />
-                            </center>
-                        </div>
-                    </div>
-                </div>
+                
                 <!-- Column -->
                 <!-- Column -->
 
@@ -95,13 +71,13 @@
                         <div class="card-body">
                             <div class="form-horizontal form-material mx-2">
                                 <div class="form-group">
-                                    <label class="col-md-12 mb-0">Title</label>
+                                    <label class="col-md-12 mb-0">Name</label>
                                     <div class="col-md-12">
                                         <input
                                             name="title"
                                             type="text"
                                             value="{{ $update ? $update->title : '' }}"
-                                            placeholder="Title of the update"
+                                            placeholder="Name of the place"
                                             class="form-control ps-0 form-control-line"
                                         />
                                     </div>
