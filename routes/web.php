@@ -32,8 +32,9 @@ Route::get('/', 'AdminController@index')->name('admin');
 Route::get('/admin', 'AdminController@index')->name('admin');
 
 // destination
-Route::get('/places', 'PlaceController@index')->name('places');
-Route::post('/place', 'PlaceController@store')->name('store');
+Route::get('/places', 'PlaceController@index')->name('get_places');
+Route::post('/place', 'PlaceController@store')->name('store_place');
+Route::get('/deletePlace/{id}', 'PlaceController@delete')->name('delete_place');
 
 Route::post('/announcement', 'AdminController@createAnnouncement')->name('createAnnouncement');
 Route::get('/announcement', 'AdminController@announcement')->name('announcement');
