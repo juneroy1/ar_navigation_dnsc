@@ -183,7 +183,7 @@
     function deletePlace(id) {
         const confirm_modal = confirm("Delete announcement?");
         if (confirm_modal) {
-            window.location.href = "/deleteAnnouncement/" + id;
+            window.location.href = "/deletePlace/" + id;
         }
     }
     function editPlace(id) {
