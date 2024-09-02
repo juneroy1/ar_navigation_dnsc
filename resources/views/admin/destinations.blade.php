@@ -104,7 +104,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">List of Place</h4>
+                        <h4 class="card-title">List of Destination</h4>
                         <!-- <h6 class="card-subtitle">Add class <code>.table</code></h6> -->
                         <div class="table-responsive">
                             <form
