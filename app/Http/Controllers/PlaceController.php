@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Model\PlaceModel;
+use App\PlaceModel;
+use Illuminate\Support\Facades\Auth;
 class PlaceController extends Controller
 {
     /**
