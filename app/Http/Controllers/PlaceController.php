@@ -56,13 +56,7 @@ class PlaceController extends Controller
         $create->name = $request->name;
         $create->user_id = $id;
         $create->save();
-        // return view('admin.announcement', [
-        //     'pageName' => 'Update',
-        //     'update'=> false,
-        //     'edit' => false,
-
-        //     'announcements' => $announcements
-        // ]);
+       
         return redirect()->back()->with('success', 'Successfully created new place');   
 
     }
