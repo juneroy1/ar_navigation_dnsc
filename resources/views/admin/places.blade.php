@@ -129,14 +129,14 @@
                                                 <button
                                                     class="btn btn-danger text-white"
                                                     type="button"
-                                                    onclick="deleteAnnouncement({{$place->id}})"
+                                                    onclick="deletePlace({{$place->id}})"
                                                 >
                                                     delete
                                                 </button>
                                                 <button
                                                     class="btn btn-primary"
                                                     type="button"
-                                                    onclick="editAnnouncement({{$place->id}})"
+                                                    onclick="editPlace({{$place->id}})"
                                                 >
                                                     edit
                                                 </button>
@@ -180,13 +180,13 @@
 </div>
 
 <script>
-    function deleteAnnouncement(id) {
+    function deletePlace(id) {
         const confirm_modal = confirm("Delete announcement?");
         if (confirm_modal) {
             window.location.href = "/deleteAnnouncement/" + id;
         }
     }
-    function editAnnouncement(id) {
+    function editPlace(id) {
         window.location.href = "/editAnnouncement/" + id;
     }
     function disapprove(id, idpage) {
