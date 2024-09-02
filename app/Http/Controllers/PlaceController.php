@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Model\PlaceModel;
 class PlaceController extends Controller
 {
     /**
@@ -14,6 +14,19 @@ class PlaceController extends Controller
     public function index()
     {
         //
+
+         $user = Auth::user();
+        $id = Auth::id();
+        
+        $places = PlaceModel::all();
+      
+            return view('admin.places', [
+                'pageName' => 'places',
+                'update'=> false,
+                'edit' => false,
+
+                'places' => $places
+            ]);
     }
 
     /**
