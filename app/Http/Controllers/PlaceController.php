@@ -17,18 +17,18 @@ class PlaceController extends Controller
     {
         //
 
-         $user = Auth::user();
+        $user = Auth::user();
         $id = Auth::id();
         
         $places = PlaceModel::all();
       
-            return view('admin.places', [
-                'pageName' => 'places',
-                'update'=> false,
-                'edit' => false,
+        return view('admin.places', [
+            'pageName' => 'places',
+            'update'=> false,
+            'edit' => false,
 
-                'places' => $places
-            ]);
+            'places' => $places
+        ]);
     }
 
     /**
@@ -109,7 +109,7 @@ class PlaceController extends Controller
         $find = DestinationModel::where('place_id_from',$id)
         ->orWhere('place_id_to',$id)
         ->get();
-        
+
         if ($find) {
             return redirect()->back()->with('error', 'Cant Delete, already have destination');
         }
