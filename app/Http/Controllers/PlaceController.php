@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\PlaceModel;
+use App\DestinationModel;
 use Illuminate\Support\Facades\Auth;
 class PlaceController extends Controller
 {
@@ -104,7 +105,14 @@ class PlaceController extends Controller
     public function destroy($id)
     {
         //
-         $delete = PlaceModel::find($id);
+        $delete = PlaceModel::find($id);
+        $find = DestinationModel::where('place_id_from',$id)
+        ->orWhere('place_id_to',$id)
+        ->get();
+        
+        if ($find) {
+            return redirect()->back()->with('error', 'Cant Delete, already have destination');
+        }
         if ($delete) {
             $delete->delete();
         }
