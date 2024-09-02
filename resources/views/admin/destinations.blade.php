@@ -122,21 +122,21 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($places as $place )
+                                        @foreach ($destinations as $destination )
                                         <tr>
-                                            <td>{{$place->name}}</td>
+                                            <td>{{$destination->name}}</td>
                                             <td>
                                                 <button
                                                     class="btn btn-danger text-white"
                                                     type="button"
-                                                    onclick="deletePlace({{$place->id}})"
+                                                    onclick="deletePlace({{$destination->id}})"
                                                 >
                                                     delete
                                                 </button>
                                                 <button
                                                     class="btn btn-primary"
                                                     type="button"
-                                                    onclick="editPlace({{$place->id}})"
+                                                    onclick="editPlace({{$destination->id}})"
                                                 >
                                                     edit
                                                 </button>
