@@ -6,7 +6,7 @@
         <div class="row align-items-center">
             <div class="col-md-6 col-8 align-self-center">
                 <h3 class="page-title mb-0 p-0">
-                    {{ $update ? "Edit Announcement" : "Create Announcement" }}
+                    {{ $update ? "Edit Place" : "Create Place" }}
                 </h3>
                 <div class="d-flex align-items-center">
                     <nav aria-label="breadcrumb">
@@ -18,7 +18,11 @@
                                 class="breadcrumb-item active"
                                 aria-current="page"
                             >
-                                {{ $update ? "Edit Announcement" : "Create Announcement" }}
+                                {{
+                                    $update
+                                        ? "Edit Place"
+                                        : "Create Place"
+                                }}
                             </li>
                         </ol>
                     </nav>
@@ -49,40 +53,16 @@
                     <li>{!! \Session::get('success') !!}</li>
                 </ul>
             </div>
-            @endif 
+            @endif
             <form
                 method="POST"
-                action="announcement"
+                action="place"
                 enctype="multipart/form-data"
                 class="row"
             >
                 @csrf
                 <!-- Column -->
-                <div class="col-lg-4 col-xlg-3 col-md-5">
-                    <div class="card">
-                        <div class="card-body profile-card">
-                            <center class="mt-4">
-                                {{-- class="rounded-circle" --}}
-                                <img
-                                    src="{{ $update ? '/updates/' . $update->image : '/foradmin/assets/images/users/5.jpg' }}"
-                                    width="150"
-                                />
-                                <h4 class="card-title mt-2">
-                                    {{
-                                        $edit
-                                            ? "Update an Image"
-                                            : "Upload an Image"
-                                    }}
-                                </h4>
-                                <input
-                                    type="file"
-                                    name="image"
-                                    class="form-control"
-                                />
-                            </center>
-                        </div>
-                    </div>
-                </div>
+                
                 <!-- Column -->
                 <!-- Column -->
 
@@ -91,32 +71,19 @@
                         <div class="card-body">
                             <div class="form-horizontal form-material mx-2">
                                 <div class="form-group">
-                                    <label class="col-md-12 mb-0">Title</label>
+                                    <label class="col-md-12 mb-0">Name</label>
                                     <div class="col-md-12">
                                         <input
-                                            name="title"
+                                            name="name"
                                             type="text"
                                             value="{{ $update ? $update->title : '' }}"
-                                            placeholder="Title of the update"
+                                            placeholder="Name of the place"
                                             class="form-control ps-0 form-control-line"
                                         />
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="col-md-12 mb-0"
-                                        >Description</label
-                                    >
-                                    <div class="col-md-12">
-                                        <textarea
-                                            name="description"
-                                            rows="5"
-                                            class="form-control ps-0 form-control-line"
-                                        >
- {{ $update ? $update->description : '' }}</textarea
-                                        >
-                                    </div>
-                                </div>
                                 
+
                                 <div class="form-group">
                                     <div class="col-sm-12 d-flex">
                                         <button
@@ -132,12 +99,12 @@
                     </div>
                 </div>
             </form>
-            
+
             @if (!$edit)
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">List of announcement</h4>
+                        <h4 class="card-title">List of Place</h4>
                         <!-- <h6 class="card-subtitle">Add class <code>.table</code></h6> -->
                         <div class="table-responsive">
                             <form
@@ -149,38 +116,35 @@
                                 <table class="table user-table">
                                     <thead>
                                         <tr>
-                                            <th class="border-top-0">#</th>
-                                            <th class="border-top-0">Image</th>
-                                            <th class="border-top-0">Title</th>
-                                            <th class="border-top-0">
-                                                Description
-                                            </th>
-                                            <th class="border-top-0">
-                                                Action
-                                            </th>
-                                           
+                                            <th class="border-top-0">Name</th>
+
+                                            <th class="border-top-0">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($announcements as $announcement )
+                                        @foreach ($places as $place )
                                         <tr>
-                                        <td>{{$announcement->id}}</td>
-                                            <td>{{$announcement->image}}</td>
-                                            <td>{{$announcement->title}}</td>
-                                            <td>{{$announcement->description}}</td>
+                                            <td>{{$place->name}}</td>
                                             <td>
-                                                <!-- <form id="myForm">
-                                                    @csrf -->
-                                                    <button class="btn btn-danger text-white" type="button" onclick="deleteAnnouncement({{$announcement->id}})">delete</button>
-                                                    <button class="btn btn-primary" type="button" onclick="editAnnouncement({{$announcement->id}})">edit</button>
-                                                <!-- </form> -->
-                                                
+                                                <button
+                                                    class="btn btn-danger text-white"
+                                                    type="button"
+                                                    onclick="deletePlace({{$place->id}})"
+                                                >
+                                                    delete
+                                                </button>
+                                                <button
+                                                    class="btn btn-primary"
+                                                    type="button"
+                                                    onclick="editPlace({{$place->id}})"
+                                                >
+                                                    edit
+                                                </button>
                                             </td>
                                         </tr>
-                                            
+
                                         @endforeach
                                     </tbody>
-                                    
                                 </table>
                             </form>
                         </div>
@@ -209,23 +173,21 @@
     <!-- ============================================================== -->
     <!-- footer -->
     <!-- ============================================================== -->
-    <footer class="footer">© 2021 212121<a href="#"></a></footer>
+    <footer class="footer">© 2024<a href="#"></a></footer>
     <!-- ============================================================== -->
     <!-- End footer -->
     <!-- ============================================================== -->
 </div>
 
-
 <script>
-    function deleteAnnouncement(id) {
-        const confirm_modal = confirm("Delete announcement?")
+    function deletePlace(id) {
+        const confirm_modal = confirm("Delete Place?");
         if (confirm_modal) {
-            window.location.href = "/deleteAnnouncement/"+id
+            window.location.href = "/deletePlace/" + id;
         }
     }
-    function editAnnouncement(id) {
-        window.location.href = "/editAnnouncement/"+id
-        
+    function editPlace(id) {
+        window.location.href = "/editAnnouncement/" + id;
     }
     function disapprove(id, idpage) {
         let confirm_Final = confirm("Do you really want to DISAPPROVE?");
