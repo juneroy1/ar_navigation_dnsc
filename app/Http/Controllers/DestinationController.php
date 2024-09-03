@@ -52,6 +52,17 @@ class DestinationController extends Controller
     public function store(Request $request)
     {
         //
+        $user = Auth::user();
+        $id = Auth::id();
+
+        $create = new DestinationModel;
+        $create->place_id_from = $request->place_id_from;
+        $create->place_id_to = $request->place_id_to;
+        $create->user_id = $id;
+        $create->save();
+       
+        return redirect()->back()->with('success', 'Successfully created new destination');   
+
     }
 
     /**
