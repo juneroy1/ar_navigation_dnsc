@@ -56,7 +56,7 @@
             @endif
             <form
                 method="POST"
-                action="place"
+                action="destination"
                 enctype="multipart/form-data"
                 class="row"
             >
