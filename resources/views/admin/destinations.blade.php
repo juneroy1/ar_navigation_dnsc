@@ -149,8 +149,8 @@
                                     <tbody>
                                         @foreach ($destinations as $destination )
                                         <tr>
-                                            <td>{{$destination->from}}</td>
-                                            <td>{{$destination->to}}</td>
+                                            <td>{{$destination->place_id_from}}</td>
+                                            <td>{{$destination->place_id_to}}</td>
                                             <td>
                                                 <button
                                                     class="btn btn-danger text-white"
