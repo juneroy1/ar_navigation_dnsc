@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\DestinationModel;
+use App\PlaceModel;
 use Illuminate\Support\Facades\Auth;
 
 class DestinationController extends Controller
@@ -20,13 +21,15 @@ class DestinationController extends Controller
         $id = Auth::id();
         
         $destinations = DestinationModel::all();
+        $places = PlaceModel::all();
       
         return view('admin.destinations', [
             'pageName' => 'places',
             'update'=> false,
             'edit' => false,
 
-            'destinations' => $destinations
+            'destinations' => $destinations,
+            'places' => $places
         ]);
     }
 
