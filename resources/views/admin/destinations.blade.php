@@ -71,15 +71,18 @@
                         <div class="card-body">
                             <div class="form-horizontal form-material mx-2">
                                 <div class="form-group">
-                                    <label class="col-md-12 mb-0">Name</label>
+                                    <label class="col-md-12 mb-0">From</label>
                                     <div class="col-md-12">
-                                        <input
+                                        <select name="place_id_from" id="place_id_from">
+                                            <option value="">Select from destination</option>
+                                        </select>
+                                        <!-- <input
                                             name="name"
                                             type="text"
                                             value="{{ $update ? $update->title : '' }}"
                                             placeholder="Name of the place"
                                             class="form-control ps-0 form-control-line"
-                                        />
+                                        /> -->
                                     </div>
                                 </div>
                                 
