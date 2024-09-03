@@ -140,7 +140,8 @@
                                 <table class="table user-table">
                                     <thead>
                                         <tr>
-                                            <th class="border-top-0">Name</th>
+                                            <th class="border-top-0">From</th>
+                                            <th class="border-top-0">To</th>
 
                                             <th class="border-top-0">Action</th>
                                         </tr>
@@ -148,7 +149,8 @@
                                     <tbody>
                                         @foreach ($destinations as $destination )
                                         <tr>
-                                            <td>{{$destination->name}}</td>
+                                            <td>{{$destination->from}}</td>
+                                            <td>{{$destination->to}}</td>
                                             <td>
                                                 <button
                                                     class="btn btn-danger text-white"
