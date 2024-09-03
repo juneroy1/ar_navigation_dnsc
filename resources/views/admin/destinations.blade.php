@@ -75,6 +75,9 @@
                                     <div class="col-md-12">
                                         <select name="place_id_from" id="place_id_from">
                                             <option value="">Select from destination</option>
+                                            @foreach($places as $place)
+                                                <option value="{{$place->id}}">{{$place->name}}</option>
+                                            @endforeach
                                         </select>
                                         <!-- <input
                                             name="name"
