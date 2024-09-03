@@ -88,6 +88,24 @@
                                         /> -->
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label class="col-md-12 mb-0">To</label>
+                                    <div class="col-md-12">
+                                        <select name="place_id_to" id="place_id_to">
+                                            <option value="">Select from destination</option>
+                                            @foreach($places as $place)
+                                                <option value="{{$place->id}}">{{$place->name}}</option>
+                                            @endforeach
+                                        </select>
+                                        <!-- <input
+                                            name="name"
+                                            type="text"
+                                            value="{{ $update ? $update->title : '' }}"
+                                            placeholder="Name of the place"
+                                            class="form-control ps-0 form-control-line"
+                                        /> -->
+                                    </div>
+                                </div>
                                 
 
                                 <div class="form-group">
