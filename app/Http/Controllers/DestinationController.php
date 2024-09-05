@@ -20,6 +20,13 @@ class DestinationController extends Controller
      */ 
     public function get_destinations() {
         $destinations = DestinationModel::all();
+
+        // Return JSON response
+        return response()->json([
+            'success' => true,
+            'data' => $destinations,
+            'message' => 'Data fetch destinations successfully'
+        ], 200);
     }
 
     /**
