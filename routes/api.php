@@ -16,9 +16,20 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+// get data sample
 Route::get('/get_data', 'AdminController@getData')->name('getData');
+
+// get annoucements
 Route::get('/announcements', 'AdminController@announcements')->name('announcements');
+
+// get lost and found
 Route::get('/lost_and_found_list', 'AdminController@lost_and_found_list')->name('lost_and_found_list');
+
+// get upload announcement
 Route::post('/upload_announcement', 'AdminController@upload_announcement')->name('upload_announcement');
+
+// get upload_laf
 Route::post('/upload_laf', 'AdminController@upload_laf')->name('upload_laf');
+
+// get destinations
 Route::get('/get_destinations', 'DestinationController@get_destinations')->name('get_destinations');
