@@ -115,7 +115,7 @@ class DestinationController extends Controller
 
         if ($destination) {
             # do delete here
-            $destination->delete()
+            $destination->delete();
         }
 
         return redirect()->back()->with('success', 'Destination deleted successfully'); 
