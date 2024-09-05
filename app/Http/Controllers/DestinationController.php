@@ -117,6 +117,8 @@ class DestinationController extends Controller
             # do delete here
             $destination->delete()
         }
+
+        return redirect()->back()->with('success', 'Destination deleted successfully'); 
         //
     }
 }
