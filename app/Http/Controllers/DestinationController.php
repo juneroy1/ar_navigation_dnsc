@@ -46,6 +46,11 @@ class DestinationController extends Controller
     }
 
     /**
+     * get destination where place from is equal to id received from the api 
+     * 
+     */
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
