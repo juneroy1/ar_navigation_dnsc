@@ -19,7 +19,7 @@ class DestinationController extends Controller
      * 
      */ 
     public function get_destinations() {
-        
+        $destinations = DestinationModel::all();
     }
 
     /**
