@@ -51,6 +51,13 @@ class DestinationController extends Controller
      */
     public function get_destination_where_place_from_is_id($id) {
         $destination = DestinationModel::where('place_from_id',$id)->get();
+
+        // Return JSON response
+        return response()->json([
+            'success' => true,
+            'data' => $destination,
+            'message' => 'Data fetch destination successfully'
+        ], 200);
         
     }
 
