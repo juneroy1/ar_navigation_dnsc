@@ -33,3 +33,4 @@ Route::post('/upload_laf', 'AdminController@upload_laf')->name('upload_laf');
 
 // get destinations
 Route::get('/get_destinations', 'DestinationController@get_destinations')->name('get_destinations');
+Route::get('/get_destination/{id}', 'DestinationController@get_destination_by_id')->name('get_destination_by_id');
