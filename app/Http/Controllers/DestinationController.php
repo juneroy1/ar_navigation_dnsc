@@ -50,7 +50,7 @@ class DestinationController extends Controller
      * 
      */
     public function get_destination_where_place_from_is_id($id) {
-        $destination = DestinationModel::where('place_id_from',$id)->with("place_from")->get();
+        $destination = DestinationModel::where('place_id_from',$id)->with("place_from")->with("place_to")->get();
 
         // Return JSON response
         return response()->json([
