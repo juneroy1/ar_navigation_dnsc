@@ -34,7 +34,7 @@ class DestinationController extends Controller
      * 
      */
     public function get_destination_by_id() {
-        
+        $destinations = DestinationModel::find($id)->with("place_from")->with("place_to");
     }
 
     /**
