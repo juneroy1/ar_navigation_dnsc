@@ -19,7 +19,7 @@ class DestinationController extends Controller
      * 
      */ 
     public function get_destinations() {
-        $destinations = DestinationModel::with("place_from")->get();
+        $destinations = DestinationModel::with("place_from")->with("place_to")->get();
 
         // Return JSON response
         return response()->json([
