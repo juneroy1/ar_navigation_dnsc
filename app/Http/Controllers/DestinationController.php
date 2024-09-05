@@ -30,6 +30,11 @@ class DestinationController extends Controller
     }
 
     /**
+     * get destination detail by id 
+     * 
+     */
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
