@@ -39,6 +39,9 @@ Route::get('/deletePlace/{id}', 'PlaceController@destroy')->name('delete_place')
 // destination
 Route::get('/destinations', 'DestinationController@index')->name('get_destinations');
 Route::post('/destination', 'DestinationController@store')->name('create_destination');
+Route::get('/deleteDestination/{id}', 'DestinationController@destroy')->('delete_destination');
+
+
 
 Route::post('/announcement', 'AdminController@createAnnouncement')->name('createAnnouncement');
 Route::get('/announcement', 'AdminController@announcement')->name('announcement');
