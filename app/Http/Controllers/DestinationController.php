@@ -15,7 +15,7 @@ class DestinationController extends Controller
     }
     /**
      * 
-     * 
+     * get all destinations with place from and place to details
      * 
      */ 
     public function get_destinations() {
