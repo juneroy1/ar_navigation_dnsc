@@ -14,6 +14,15 @@ class DestinationController extends Controller
         $this->middleware('api');
     }
     /**
+     * 
+     * 
+     * 
+     */ 
+    public function get_destinations() {
+        
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
