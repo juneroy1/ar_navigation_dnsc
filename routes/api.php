@@ -21,3 +21,4 @@ Route::get('/announcements', 'AdminController@announcements')->name('announcemen
 Route::get('/lost_and_found_list', 'AdminController@lost_and_found_list')->name('lost_and_found_list');
 Route::post('/upload_announcement', 'AdminController@upload_announcement')->name('upload_announcement');
 Route::post('/upload_laf', 'AdminController@upload_laf')->name('upload_laf');
+Route::get('/get_destinations', 'DestinationController@get_destinations')->name('get_destinations');
