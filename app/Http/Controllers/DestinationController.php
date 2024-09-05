@@ -49,6 +49,9 @@ class DestinationController extends Controller
      * get destination where place from is equal to id received from the api 
      * 
      */
+    public function get_destination_where_place_from_is_id() {
+        
+    }
 
     /**
      * Display a listing of the resource.
