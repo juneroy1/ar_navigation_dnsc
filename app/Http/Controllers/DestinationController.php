@@ -33,6 +33,9 @@ class DestinationController extends Controller
      * get destination detail by id 
      * 
      */
+    public function get_destination_by_id() {
+        
+    }
 
     /**
      * Display a listing of the resource.
