@@ -17,6 +17,16 @@ class PlaceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function get_places()  {
+         $places = PlaceModel::all();
+
+        // Return JSON response
+        return response()->json([
+            'success' => true,
+            'data' => $places,
+            'message' => 'Data fetch places successfully'
+        ], 200);
+    }
     public function index()
     {
         //
