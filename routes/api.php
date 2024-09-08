@@ -32,6 +32,7 @@ Route::post('/upload_announcement', 'AdminController@upload_announcement')->name
 Route::post('/upload_laf', 'AdminController@upload_laf')->name('upload_laf');
 
 // get destinations
+Route::get('/get_places', 'PlaceController@get_places')->name('get_places');
 Route::get('/get_destinations', 'DestinationController@get_destinations')->name('get_destinations');
 Route::get('/get_destination/{id}', 'DestinationController@get_destination_by_id')->name('get_destination_by_id');
 Route::get('/get_destination_from_place/{id}', 'DestinationController@get_destination_where_place_from_is_id')->name('get_destination_from_place');
