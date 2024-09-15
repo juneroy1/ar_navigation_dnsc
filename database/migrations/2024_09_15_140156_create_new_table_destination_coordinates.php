@@ -13,8 +13,15 @@ class CreateNewTableDestinationCoordinates extends Migration
      */
     public function up()
     {
-        Schema::create('new_table_destination_coordinates', function (Blueprint $table) {
+        Schema::create('destination_coordinates', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('x');
+            $table->string('y');
+            $table->string('z');
+            $table->string('destination_id');
+            $table->string('time');
+            $table->string('longitude');
+            $table->string('latitude');
             $table->timestamps();
         });
     }
@@ -26,6 +33,6 @@ class CreateNewTableDestinationCoordinates extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('new_table_destination_coordinates');
+        Schema::dropIfExists('destination_coordinates');
     }
 }
