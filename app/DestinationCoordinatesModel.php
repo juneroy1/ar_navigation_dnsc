@@ -8,4 +8,5 @@ class DestinationCoordinatesModel extends Model
 {
     //
     protected $fillable = ['x', 'y', 'z', 'destination_id', 'time', 'longitude', 'latitude'];
+    protected $table = "destination_coordinates";
 }
