@@ -39,4 +39,4 @@ Route::get('/get_destination_from_place/{id}', 'DestinationController@get_destin
 
 
 // destination coordinates
-Route::post('/submit_coordinates', 'DestinationCoordinates@get_places')->name('get_places');
+Route::post('/submit_coordinates', 'DestinationCoordinatesController@store')->name('submit_coordinates');
