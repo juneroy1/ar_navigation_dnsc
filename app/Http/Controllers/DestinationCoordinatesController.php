@@ -25,6 +25,7 @@ class DestinationCoordinatesController extends Controller
         $id = Auth::id();
         
         $destination_coordinates = DestinationCoordinatesModel::all();
+        $destinations = DestinationModel::all();
       
         return view('admin.coordinates', [
             'pageName' => 'places',
@@ -32,6 +33,7 @@ class DestinationCoordinatesController extends Controller
             'edit' => false,
 
             'destination_coordinates' => $destination_coordinates,
+            'destinations' => $destinations,
         ]);
     }
 
