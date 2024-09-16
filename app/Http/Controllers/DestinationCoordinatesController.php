@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\DestinationCoordinatesModel;
 class DestinationCoordinatesController extends Controller
 {
     public function __construct()
@@ -18,6 +18,18 @@ class DestinationCoordinatesController extends Controller
     public function index()
     {
         //
+        $user = Auth::user();
+        $id = Auth::id();
+        
+        $destination_coordinates = DestinationCoordinatesModel::all();
+      
+        return view('admin.destinations', [
+            'pageName' => 'places',
+            'update'=> false,
+            'edit' => false,
+
+            'destinations' => $destination_coordinates,
+        ]);
     }
 
     /**
