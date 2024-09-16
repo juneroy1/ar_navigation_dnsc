@@ -42,6 +42,9 @@ Route::post('/destination', 'DestinationController@store')->name('create_destina
 Route::get('/deleteDestination/{id}', 'DestinationController@destroy')->name('delete_destination');
 
 
+// coordinates
+Route::get('/coordinates', 'DestinationCoordinatesController@index')->name('get_coordinates');
+
 
 Route::post('/announcement', 'AdminController@createAnnouncement')->name('createAnnouncement');
 Route::get('/announcement', 'AdminController@announcement')->name('announcement');
