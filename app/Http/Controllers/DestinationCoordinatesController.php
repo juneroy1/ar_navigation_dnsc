@@ -23,7 +23,7 @@ class DestinationCoordinatesController extends Controller
         
         $destination_coordinates = DestinationCoordinatesModel::all();
       
-        return view('admin.destinations', [
+        return view('admin.coordinates', [
             'pageName' => 'places',
             'update'=> false,
             'edit' => false,
