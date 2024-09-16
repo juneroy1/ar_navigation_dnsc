@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\DestinationCoordinatesModel;
+use App\DestinationModel;
+use App\PlaceModel;
+use Illuminate\Support\Facades\Auth;
 class DestinationCoordinatesController extends Controller
 {
     public function __construct()
