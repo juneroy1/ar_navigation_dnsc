@@ -140,29 +140,28 @@
                                 <table class="table user-table">
                                     <thead>
                                         <tr>
-                                            <th class="border-top-0">From</th>
-                                            <th class="border-top-0">To</th>
+                                            <th class="border-top-0">Coordinates</th>
+                                            
 
                                             <th class="border-top-0">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($destinations as $destination )
+                                        @foreach ($destination_coordinates as $destination_coordinate )
                                         <tr>
-                                            <td>{{$destination->place_from->name}}</td>
-                                            <td>{{$destination->place_to->name}}</td>
+                                            <td>{{'x: '.$destination_coordinate->x}}</td>
                                             <td>
                                                 <button
                                                     class="btn btn-danger text-white"
                                                     type="button"
-                                                    onclick="deleteDestination({{$destination->id}})"
+                                                    onclick="deleteDestination({{$destination_coordinate->id}})"
                                                 >
                                                     delete
                                                 </button>
                                                 <button
                                                     class="btn btn-primary"
                                                     type="button"
-                                                    onclick="editDestination({{$destination->id}})"
+                                                    onclick="editDestination({{$destination_coordinate->id}})"
                                                 >
                                                     edit
                                                 </button>
