@@ -108,7 +108,7 @@
                                     </div>
                                 </div>
 
-                                 <div class="form-group">
+                                <div class="form-group">
                                     <label class="col-md-12 mb-0">Y</label>
                                     <div class="col-md-12">
                                         <input
@@ -120,7 +120,7 @@
                                     </div>
                                 </div>
 
-                                 <div class="form-group">
+                                <div class="form-group">
                                     <label class="col-md-12 mb-0">Z</label>
                                     <div class="col-md-12">
                                         <input
@@ -131,8 +131,30 @@
                                         />
                                     </div>
                                 </div>
-                                
 
+                                <div class="form-group">
+                                    <label class="col-md-12 mb-0">duration</label>
+                                    <div class="col-md-12">
+                                        <input
+                                            name="time"
+                                            type="text"
+                                            placeholder="add duration value"
+                                            class="form-control ps-0 form-control-line"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-12 mb-0">longitude</label>
+                                    <div class="col-md-12">
+                                        <input
+                                            name="longitude"
+                                            type="text"
+                                            placeholder="add longitude value"
+                                            class="form-control ps-0 form-control-line"
+                                        />
+                                    </div>
+                                </div>
                                 <div class="form-group">
                                     <div class="col-sm-12 d-flex">
                                         <button
