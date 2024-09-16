@@ -18,11 +18,7 @@
                                 class="breadcrumb-item active"
                                 aria-current="page"
                             >
-                                {{
-                                    $update
-                                        ? "Edit Place"
-                                        : "Create Place"
-                                }}
+                                {{ $update ? "Edit Place" : "Create Place" }}
                             </li>
                         </ol>
                     </nav>
@@ -62,7 +58,7 @@
             >
                 @csrf
                 <!-- Column -->
-                
+
                 <!-- Column -->
                 <!-- Column -->
 
@@ -73,10 +69,21 @@
                                 <div class="form-group">
                                     <label class="col-md-12 mb-0">From</label>
                                     <div class="col-md-12">
-                                        <select name="place_id_from" id="place_id_from">
-                                            <option value="">Select from destination</option>
-                                            @foreach($destinations as $destination)
-                                                <option value="{{$destination->id}}">{{$destination->place_from->name.' - '.$destination->place_to->name}}</option>
+                                        <select
+                                            class="form-control ps-0 form-control-line"
+                                            name="place_id_from"
+                                            id="place_id_from"
+                                        >
+                                            <option value="">
+                                                Select from destination
+                                            </option>
+                                            @foreach($destinations as
+                                            $destination)
+                                            <option
+                                                value="{{$destination->id}}"
+                                            >
+                                                {{$destination->place_from->name.' - '.$destination->place_to->name}}
+                                            </option>
                                             @endforeach
                                         </select>
                                         <!-- <input
@@ -88,7 +95,42 @@
                                         /> -->
                                     </div>
                                 </div>
-                               
+
+                                <div class="form-group">
+                                    <label class="col-md-12 mb-0">X</label>
+                                    <div class="col-md-12">
+                                        <input
+                                            name="X"
+                                            type="text"
+                                            placeholder="add x value"
+                                            class="form-control ps-0 form-control-line"
+                                        />
+                                    </div>
+                                </div>
+
+                                 <div class="form-group">
+                                    <label class="col-md-12 mb-0">Y</label>
+                                    <div class="col-md-12">
+                                        <input
+                                            name="y"
+                                            type="text"
+                                            placeholder="add y value"
+                                            class="form-control ps-0 form-control-line"
+                                        />
+                                    </div>
+                                </div>
+
+                                 <div class="form-group">
+                                    <label class="col-md-12 mb-0">Z</label>
+                                    <div class="col-md-12">
+                                        <input
+                                            name="z"
+                                            type="text"
+                                            placeholder="add z value"
+                                            class="form-control ps-0 form-control-line"
+                                        />
+                                    </div>
+                                </div>
                                 
 
                                 <div class="form-group">
@@ -123,16 +165,20 @@
                                 <table class="table user-table">
                                     <thead>
                                         <tr>
-                                            <th class="border-top-0">Coordinates</th>
-                                            
+                                            <th class="border-top-0">
+                                                Coordinates
+                                            </th>
 
                                             <th class="border-top-0">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($destination_coordinates as $destination_coordinate )
+                                        @foreach ($destination_coordinates as
+                                        $destination_coordinate )
                                         <tr>
-                                            <td>{{'x: '.$destination_coordinate->x}}</td>
+                                            <td>
+                                                {{'x: '.$destination_coordinate->x}}
+                                            </td>
                                             <td>
                                                 <button
                                                     class="btn btn-danger text-white"
