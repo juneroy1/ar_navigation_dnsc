@@ -28,7 +28,7 @@ class DestinationCoordinatesController extends Controller
             'update'=> false,
             'edit' => false,
 
-            'destinations' => $destination_coordinates,
+            'destination_coordinates' => $destination_coordinates,
         ]);
     }
 
