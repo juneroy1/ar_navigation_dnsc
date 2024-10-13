@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\DestinationCoordinatesController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -40,3 +40,4 @@ Route::get('/get_destination_from_place/{id}', 'DestinationController@get_destin
 
 // destination coordinates
 Route::post('/submit_coordinates', 'DestinationCoordinatesController@store')->name('submit_coordinates');
+Route::get('/get-waypoints/{id}', [DestinationCoordinatesController::class, 'getWaypoints']);
