@@ -170,32 +170,39 @@ class AdminController extends Controller
         $description = $request->input('description');
          $name = $request->input('name');
          $avatar = $request->input('avatar');
-        if($request->hasFile('file')) {
+
+          try {
+           if($request->hasFile('file')) {
             $file = $request->file('file');
             $filename = time() . '_' . $file->getClientOriginalName();
             $path = $file->storeAs('images', $filename, 'public');
 
-            // create new announcement
+                // create new announcement
+            }
 
             $lost_and_found = new LostAndFound;
             $lost_and_found->title = $description;
             $lost_and_found->description = $description;
             $lost_and_found->name = $name;
             $lost_and_found->avatar = $avatar;
-            $lost_and_found->image = Storage::url($path);
+
+            if($request->hasFile('file')) {
+                $lost_and_found->image = Storage::url($path);
+            }
+           
             
 
             if ($lost_and_found->save()) {
-                return response()->json(['url' => Storage::url($path), 'description'=> $description, 'name' =>  $name, 'avatar' => $avatar], 200);
+                return response()->json(['url' =>$request->hasFile('file')? Storage::url($path):null, 'description'=> $description, 'name' =>  $name, 'avatar' => $avatar], 200);
             }
+          }catch (Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 401);
+        }
+        
 
-            return response()->json(['url' => Storage::url($path), 'description'=> $description, 'name' =>  $name, 'avatar' => $avatar], 500);
-
+          
 
             
-        }
-
-        return response()->json(['error' => 'No file uploaded'], 400);
     }
    public function upload_announcement(Request $request)
     {
