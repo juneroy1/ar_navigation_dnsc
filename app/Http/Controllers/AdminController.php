@@ -14,7 +14,7 @@ class AdminController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['api']);
+        // $this->middleware(['api']);
     }
     /**
      * Display a listing of the resource.
@@ -199,35 +199,38 @@ class AdminController extends Controller
     }
    public function upload_announcement(Request $request)
     {
+
          $description = $request->input('description');
          $name = $request->input('name');
          $avatar = $request->input('avatar');
-        if($request->hasFile('file')) {
+         try {
+           if($request->hasFile('file')) {
             $file = $request->file('file');
             $filename = time() . '_' . $file->getClientOriginalName();
             $path = $file->storeAs('images', $filename, 'public');
 
             // create new announcement
-
+            }
             $announcement = new Announcement;
             $announcement->title = $description;
             $announcement->description = $description;
             $announcement->name = $name;
             $announcement->avatar = $avatar;
-            $announcement->image = Storage::url($path);
+            if($request->hasFile('file')) {
+                $announcement->image = Storage::url($path);
+            }
+            
             
 
             if ($announcement->save()) {
-                return response()->json(['url' => Storage::url($path), 'description'=> $description, 'name' =>  $name, 'avatar' => $avatar], 200);
+                return response()->json(['url' => $request->hasFile('file')? Storage::url($path):null, 'description'=> $description, 'name' =>  $name, 'avatar' => $avatar], 200);
             }
+        
 
-            return response()->json(['url' => Storage::url($path), 'description'=> $description, 'name' =>  $name, 'avatar' => $avatar], 500);
-
-
-            
+         } catch (Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 401);
         }
-
-        return response()->json(['error' => 'No file uploaded'], 400);
+        
     }
 
 }
