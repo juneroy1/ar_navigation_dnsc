@@ -56,6 +56,33 @@ class DestinationCoordinatesController extends Controller
     public function store(Request $request)
     {
         //
+        $waypoints = $request->input('waypoints');
+        $destination_id = $request->input('destination_id');
+        try {
+            foreach ($waypoints as $waypoint) {
+                // Assuming you have a Waypoint model to save the data
+                DestinationCoordinatesModel::create([
+                    'x' => $waypoint['x'],
+                    'y' => $waypoint['y'],
+                    'z' => $waypoint['z'],
+                    'destination_id' => $destination_id
+                ]);
+            }
+
+            return response()->json(['message' => 'Waypoints saved successfully'], 200);
+        }catch (Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 401);
+        }
+    
+    }
+
+    public function getWaypoints($id){
+         // Fetch all waypoints from the database
+        $waypoints = DestinationCoordinatesModel::where('destination_id', $id)->get();
+
+        return response()->json([
+            'waypoints' => $waypoints
+        ]);
     }
 
     /**
